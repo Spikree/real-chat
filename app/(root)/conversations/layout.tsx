@@ -1,12 +1,15 @@
-import ItemList from '@/components/shared/item-list/ItemList'
-import React from 'react'
+import ItemList from "@/components/shared/item-list/ItemList";
+import React from "react";
 
-type Props = React.PropsWithChildren<{}>
+type Props = React.PropsWithChildren<{}>;
 
-const conversationsLayout = ({children}: Props) => {
+const conversationsLayout = ({ children }: Props) => {
   return (
-    <ItemList title='conversations'>Conversations page</ItemList>
-  )
-}
+    <>
+      <ItemList title="conversations">Conversations page</ItemList>
+      {children}
+    </>
+  );
+};
 
-export default conversationsLayout
+export default conversationsLayout;
