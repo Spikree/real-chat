@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ConvexClientProvider from "@/providers/ConvexClientProvider";
 import { TooltipProvider } from "@radix-ui/react-tooltip";
+import { ThemeProvider } from "@/components/ui/theme/theme-provider";
 
 export const metadata: Metadata = {
   title: "Real time chat app",
@@ -16,9 +17,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
         <ConvexClientProvider>
           <TooltipProvider>{children}</TooltipProvider>
         </ConvexClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
