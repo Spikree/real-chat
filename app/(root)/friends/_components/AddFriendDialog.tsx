@@ -11,11 +11,12 @@ import {
 } from "@radix-ui/react-tooltip";
 import { Button } from "@/components/ui/button";
 import { UserPlus } from "lucide-react";
-import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -80,9 +81,14 @@ const AddFriendDialog = (props: Props) => {
                     <Input placeholder="Email..." {...field}>
                     </Input>
                   </FormControl>
+                  <FormMessage />
                 </FormItem>
               )}
-            ></FormField>
+            />
+              <DialogFooter>
+                <Button disabled={false} type="submit">send</Button>
+              </DialogFooter>
+            
           </form>
         </Form>
       </DialogContent>
